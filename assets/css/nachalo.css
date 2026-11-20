@@ -1,0 +1,94 @@
+/* Началото: 3D героят, промотата, движенията на числата */
+.geroi{position:relative;height:440vh;background:var(--paper)}
+.geroi__sc{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;overflow:hidden;isolation:isolate;
+  background:radial-gradient(120% 80% at 50% 70%,#fff 0%,var(--paper) 62%)}
+.geroi__tekst{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:20px 56px;align-items:end;padding-top:clamp(100px,12vh,128px);position:relative;z-index:3;pointer-events:none}
+.geroi__tekst a,.geroi__tekst button{pointer-events:auto}
+.geroi__h1{font-size:clamp(38px,4.9vw,74px);line-height:1;letter-spacing:-.045em;font-weight:500}
+.geroi__h1 .red:nth-child(2){color:var(--navy)}
+.geroi__pod{display:flex;flex-direction:column;gap:20px;padding-bottom:8px}
+.geroi__pod p{font-size:17px;line-height:1.55;color:var(--ink-2);max-width:420px}
+.geroi__pod .btn--linia svg{margin-right:-4px}
+.geroi__scena{position:absolute;inset:0;z-index:1;cursor:none}
+.geroi__scena.bez-3d{cursor:auto}
+.geroi__scena canvas{position:absolute;inset:0;width:100%!important;height:100%!important;outline:none}
+.geroi__poster{position:absolute;left:4%;right:4%;top:30%;bottom:9%;width:92%;height:61%;object-fit:contain;object-position:50% 50%;transition:opacity .9s var(--izh)}
+.geroi__scena.zhivo .geroi__poster{opacity:0;pointer-events:none}
+.geroi__leshta{position:absolute;z-index:4;left:0;top:0;width:calc(var(--r,130px)*2);height:calc(var(--r,130px)*2);margin:calc(var(--r,130px)*-1) 0 0 calc(var(--r,130px)*-1);
+  border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--sky),0 22px 50px -20px rgb(20 30 60/.45);pointer-events:none;opacity:0;
+  transform:translate(var(--x,-500px),var(--y,-500px)) scale(.6);transition:opacity .35s,transform .45s var(--izh)}
+.geroi__leshta.vidima{opacity:1;transform:translate(var(--x),var(--y)) scale(1)}
+.geroi__leshta span{position:absolute;left:50%;top:100%;transform:translate(-50%,12px);white-space:nowrap;height:28px;padding:0 12px;border-radius:999px;background:var(--navy);
+  color:#fff;font:700 12px/28px var(--f-t);letter-spacing:.04em}
+.geroi__belezhki{position:absolute;inset:0;z-index:3;pointer-events:none}
+.geroi__dolu{grid-row:3;display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:32px;align-items:end;padding-bottom:clamp(18px,3vh,32px);position:relative;z-index:3;pointer-events:none}
+.geroi__pr{display:flex;align-items:flex-start;font:600 clamp(54px,6vw,92px)/.8 var(--f-d);letter-spacing:-.06em;color:var(--navy);font-variant-numeric:tabular-nums;min-width:2.6em}
+.geroi__pr span{font-size:.36em;margin-top:.12em;margin-left:2px;color:var(--sky)}
+.geroi__etap{display:flex;flex-direction:column;gap:6px;padding-bottom:4px}
+.geroi__etap small{font:600 12px/1 var(--f-t);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.geroi__etap b{font:500 clamp(18px,1.6vw,24px)/1.1 var(--f-d);letter-spacing:-.025em;min-width:min(12ch,100%)}
+.geroi__podskazka{justify-self:start;display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--ink-3);max-width:330px;padding-bottom:6px;margin-left:auto;margin-right:260px}
+.mishka{flex:none;width:22px;height:34px;border-radius:12px;box-shadow:inset 0 0 0 1.75px currentColor;position:relative}
+.mishka::after{content:'';position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:currentColor;animation:mishka 1.8s var(--izh) infinite}
+@keyframes mishka{0%{transform:translateY(0);opacity:1}70%{transform:translateY(9px);opacity:0}100%{opacity:0}}
+.geroi__lenta{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--line);z-index:3}
+.geroi__lenta i{position:absolute;inset:0;background:var(--sky);transform-origin:left;transform:scaleX(var(--p,0))}
+
+/* промото на процеса */
+.proces-promo{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:0;margin-top:clamp(40px,5vw,72px);border-radius:var(--r-xl);overflow:hidden;background:var(--navy);color:#fff;
+  box-shadow:var(--sen-2);transition:transform .6s var(--izh)}
+.proces-promo:hover{transform:translateY(-4px)}
+.proces-promo__t{display:flex;flex-direction:column;gap:18px;align-items:flex-start;padding:clamp(28px,4vw,56px)}
+.proces-promo__t h3{color:#fff}
+.proces-promo__t p{color:color-mix(in oklch,#fff 74%,var(--navy));max-width:420px}
+.proces-promo__t .etiket{color:color-mix(in oklch,#fff 70%,var(--navy))}
+.proces-promo__kadar{position:relative;background:var(--paper);margin:10px;border-radius:calc(var(--r-xl) - 10px);overflow:hidden}
+.proces-promo__kadar img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--izh)}
+.proces-promo:hover .proces-promo__kadar img{transform:scale(1.04)}
+.proces-promo--tamno{background:var(--navy-2);margin-top:0}
+
+/* промото на конструктора */
+.konstr-promo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 72px;align-items:center}
+.konstr-promo__t{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.konstr-promo__vizual{position:relative;display:flex;flex-wrap:wrap;gap:10px;padding:clamp(24px,3vw,40px);border-radius:var(--r-xl);background:var(--navy-2)}
+.konstr-chip{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 18px 0 8px;border-radius:999px;background:rgb(255 255 255/.06);color:color-mix(in oklch,#fff 70%,var(--navy));
+  font-weight:700;font-size:15px;transition:background .5s,color .5s}
+.konstr-chip svg{width:30px;height:30px;padding:6px;border-radius:50%;background:rgb(255 255 255/.08);color:transparent;transition:all .5s}
+.konstr-chip.vkl{background:var(--sky);color:var(--navy)}
+.konstr-chip.vkl svg{background:var(--navy);color:var(--sky)}
+.konstr-cena{width:100%;margin-top:14px;padding:22px;border-radius:var(--r-l);background:#fff;color:var(--ink);display:flex;flex-direction:column;gap:6px}
+.konstr-cena small{font-size:12.5px;color:var(--ink-3);font-weight:600}
+.konstr-cena b{font:600 clamp(26px,2.6vw,38px)/1.05 var(--f-d);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+
+@media (min-width:981px) and (max-height:860px){
+  .geroi__tekst{padding-top:92px;gap:14px 48px}
+  .geroi__h1{font-size:clamp(34px,min(4.6vw,6.6vh),70px)}
+  .geroi__pod{gap:14px}
+  .geroi__pod p{font-size:15.5px}
+  .geroi__pod .btn{height:50px}
+  .geroi__pr{font-size:clamp(46px,min(6vw,9vh),92px)}
+}
+@media (max-width:980px){
+  .geroi{height:380vh}
+  .geroi__tekst{grid-template-columns:minmax(0,1fr);gap:14px;padding-top:92px}
+  .geroi__pod p{font-size:15.5px}
+  .geroi__pod .btn-red{display:none}
+  .geroi__dolu{grid-template-columns:auto minmax(0,1fr);gap:18px}
+  .geroi__podskazka{display:none}
+  .proces-promo,.konstr-promo{grid-template-columns:minmax(0,1fr)}
+  .proces-promo__kadar{aspect-ratio:4/3;order:-1}
+}
+@media (max-width:640px){
+  .geroi__h1{font-size:clamp(34px,10vw,48px)}
+  .geroi__dolu{padding-bottom:52px}
+  .bel3d{height:26px;font-size:11px;padding:0 10px 0 5px}
+  .bel3d i{width:15px;height:15px}
+  .geroi__pod p{max-width:none}
+  .geroi__pr{font-size:52px}
+}
+@media (max-width:400px){
+  .geroi__dolu{gap:12px}
+  .geroi__pr{font-size:42px}
+  .geroi__etap b{font-size:15px}
+  .geroi__etap small{font-size:10.5px}
+}

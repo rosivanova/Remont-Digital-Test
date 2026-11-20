@@ -1,0 +1,253 @@
+/* Страниците отвътре */
+.obv--tesno{max-width:calc(820px + 2*var(--pole))}
+.podpis{font:500 18px/1.3 var(--f-d);letter-spacing:-.02em;color:var(--navy)}
+.str-glava__kadar--gr{display:grid;place-items:center;background:var(--sky-soft);padding:clamp(24px,4vw,64px)}
+.usl-kadar{background:var(--paper)}
+
+/* листът на офертата и договорът (графики вместо снимки) */
+.list-oferta,.list-dogovor{width:min(560px,100%);background:#fff;border-radius:var(--r-l);padding:clamp(20px,2.4vw,32px);box-shadow:var(--sen-2);display:flex;flex-direction:column;gap:2px}
+.list-oferta__gore,.list-dogovor__gore{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;margin-bottom:8px;border-bottom:2px solid var(--navy)}
+.list-oferta__gore b,.list-dogovor__gore b{font:600 26px/1 var(--f-d);letter-spacing:-.04em}
+.list-oferta__gore span,.list-dogovor__gore span{font:600 12.5px/1 var(--f-t);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.list-oferta__red{display:grid;grid-template-columns:34px minmax(0,1fr) 44px 92px;gap:10px;align-items:center;padding:11px 0;border-bottom:1px dashed var(--line-2);font-size:15px;
+  opacity:0;transform:translateX(-10px);transition:opacity .5s calc(var(--i)*.09s + .2s),transform .5s calc(var(--i)*.09s + .2s) var(--izh)}
+.list-oferta__red .n{font:700 12px/1 var(--f-t);color:var(--sky-deep)}
+.list-oferta__red .m{font-size:13px;color:var(--ink-3)}
+.list-oferta__red .c{height:10px;border-radius:6px;background:var(--line);overflow:hidden}
+.list-oferta__red .c i{display:block;height:100%;width:0;background:var(--sky);border-radius:6px;transition:width .9s calc(var(--i)*.09s + .5s) var(--izh)}
+.list-oferta__obshto{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding:14px 16px;border-radius:14px;background:var(--navy);color:#fff;font-weight:700}
+.list-oferta__obshto b{font:600 22px/1 var(--f-d)}
+.vleze .list-oferta__red,.otkrii.vleze .list-oferta__red{opacity:1;transform:none}
+.vleze .list-oferta__red .c i{width:var(--w,70%)}
+.list-oferta__red:nth-child(2) .c i{--w:45%}.list-oferta__red:nth-child(3) .c i{--w:80%}.list-oferta__red:nth-child(4) .c i{--w:62%}
+.list-oferta__red:nth-child(5) .c i{--w:38%}.list-oferta__red:nth-child(6) .c i{--w:90%}.list-oferta__red:nth-child(7) .c i{--w:72%}.list-oferta__red:nth-child(8) .c i{--w:30%}
+.list-dogovor__red{display:grid;grid-template-columns:40px minmax(0,1fr) 28px;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600;font-size:15.5px;
+  opacity:0;transform:translateY(8px);transition:opacity .5s calc(var(--i)*.12s + .2s),transform .5s calc(var(--i)*.12s + .2s) var(--izh)}
+.list-dogovor__red .ik{width:40px;height:40px;border-radius:12px;background:var(--sky-soft);display:grid;place-items:center;color:var(--navy)}
+.list-dogovor__red .ik svg{width:20px;height:20px}
+.list-dogovor__red .ok{color:var(--sky-deep)}
+.list-dogovor__red .ok svg{width:22px;height:22px}
+.list-dogovor__podpis{width:200px;height:56px;margin:18px 0 0 auto}
+.list-dogovor__podpis path{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.6s .9s var(--izh)}
+.vleze .list-dogovor__red{opacity:1;transform:none}
+.vleze .list-dogovor__podpis path{stroke-dashoffset:0}
+
+/* как работим: големите стъпки */
+.stapki-golemi{display:grid;gap:18px}
+.st-golyama{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border-radius:var(--r-xl);overflow:hidden;background:#fff;box-shadow:var(--sen);transition:transform .6s var(--izh),box-shadow .6s}
+.st-golyama:nth-child(even) .st-golyama__v{order:-1}
+.st-golyama:hover{transform:translateY(-4px);box-shadow:var(--sen-2)}
+.st-golyama__t{display:flex;flex-direction:column;gap:16px;padding:clamp(28px,4vw,60px);justify-content:center;align-items:flex-start}
+.st-golyama__t p{color:var(--ink-2);max-width:460px}
+.st-golyama__n{font:600 clamp(56px,6vw,88px)/.8 var(--f-d);letter-spacing:-.06em;color:var(--sky)}
+.st-golyama__v{position:relative;min-height:380px;background:var(--paper);margin:10px;border-radius:calc(var(--r-xl) - 10px);overflow:hidden}
+.st-golyama__v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--izh)}
+.st-golyama:hover .st-golyama__v img{transform:scale(1.04)}
+.st-golyama__v--gr{display:grid;place-items:center;padding:24px;background:var(--sky-soft)}
+.st-golyama__v--gr .list-oferta,.st-golyama__v--gr .list-dogovor{box-shadow:var(--sen)}
+
+/* цитатът и навигацията между стъпките */
+.tsitat-blok{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.tsitat-blok--sam{grid-template-columns:minmax(0,1fr)}
+.tsitat{margin:0;display:flex;flex-direction:column;gap:22px;justify-content:center;padding:clamp(28px,4vw,56px);border-radius:var(--r-xl);background:var(--navy);color:#fff}
+.tsitat blockquote{margin:0;font:400 clamp(20px,1.9vw,27px)/1.42 var(--f-t)}
+.tsitat figcaption{font-weight:700;color:var(--sky)}
+.tsitat-blok__kadar{border-radius:var(--r-xl);overflow:hidden;min-height:360px;position:relative}
+.tsitat-blok__kadar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st-nav{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.st-nav__a{display:flex;align-items:center;gap:18px;padding:22px 26px;border-radius:var(--r-l);background:#fff;box-shadow:var(--sen);transition:transform .4s var(--izh)}
+.st-nav__a:hover{transform:translateY(-3px)}
+.st-nav__a svg{width:22px;height:22px;flex:none;color:var(--sky-deep)}
+.st-nav__a span{display:flex;flex-direction:column;gap:6px}
+.st-nav__a small{font:600 12px/1 var(--f-t);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.st-nav__a b{font:500 19px/1.2 var(--f-d);letter-spacing:-.02em}
+.st-nav__a--d{justify-content:flex-end;text-align:right}
+.st-nav__a--d span{align-items:flex-end}
+
+/* още услуги, промота */
+.mini-uslugi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mini-u{display:flex;flex-direction:column;gap:14px;padding:12px 12px 22px;border-radius:var(--r-l);background:#fff;box-shadow:var(--sen);transition:transform .5s var(--izh)}
+.mini-u:hover{transform:translateY(-4px)}
+.mini-u__k{aspect-ratio:4/3;border-radius:calc(var(--r-l) - 8px);overflow:hidden;background:var(--paper)}
+.mini-u__k img{width:100%;height:100%;object-fit:cover}
+.mini-u b{font:500 19px/1.25 var(--f-d);letter-spacing:-.02em;padding:0 8px}
+.mini-u .vrazka{margin:0 8px;align-self:flex-start;font-size:14px}
+.dva-promo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.promo-k{display:flex;flex-direction:column;gap:16px;align-items:flex-start;min-height:280px;padding:clamp(28px,3.4vw,48px);border-radius:var(--r-xl);transition:transform .5s var(--izh)}
+.promo-k:hover{transform:translateY(-4px)}
+.promo-k p{max-width:420px;opacity:.82}
+.promo-k .vrazka{margin-top:auto;color:inherit}
+.promo-k--tamno{background:var(--navy);color:#fff}
+.promo-k--tamno h3,.promo-k--tamno .etiket{color:#fff}
+.promo-k--nebe{background:var(--sky);color:var(--navy)}
+.promo-k--nebe .etiket{color:var(--navy)}
+.promo-k--nebe .etiket::before{background:var(--navy)}
+
+/* въпросите преди ремонта на баня */
+.vaprosi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.vapros{display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:var(--r-l);background:var(--sky-soft);min-height:170px;transition:background .4s,transform .4s var(--izh)}
+.vapros:hover{background:var(--sky);transform:translateY(-3px)}
+.vapros span{font:600 14px/1 var(--f-d);color:var(--sky-deep)}
+.vapros:hover span{color:var(--navy)}
+.vapros b{font:500 clamp(18px,1.5vw,22px)/1.3 var(--f-d);letter-spacing:-.02em;margin-top:auto}
+
+/* двете решения за хидроизолация, с разрез на слоевете */
+.dve-resheniya{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.reshenie{display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,40px);border-radius:var(--r-xl);background:#fff;box-shadow:var(--sen);position:relative;overflow:hidden}
+.reshenie--bitum{background:var(--navy);color:#fff}
+.reshenie--bitum h3{color:#fff}
+.reshenie__n{font:600 14px/1 var(--f-d);color:var(--sky)}
+.reshenie p{opacity:.84}
+.reshenie__razrez{height:150px;border-radius:18px;overflow:hidden;display:flex;flex-direction:column-reverse;background:var(--paper)}
+.reshenie--bitum .reshenie__razrez{background:var(--navy-2)}
+.sl{display:block;transform-origin:left;transform:scaleX(0);transition:transform 1s var(--izh)}
+.vleze .sl{transform:none}
+.sl--beton{height:56px;background:repeating-linear-gradient(135deg,#B9BEC6 0 2px,#C9CDD3 2px 9px)}
+.sl--grund{height:10px;background:#8C96A6;transition-delay:.25s}
+.sl--guma{height:26px;background:var(--sky);border-radius:0 0 14px 0;transition-delay:.5s}
+.sl--membr{height:16px;background:#2A2E36;transition-delay:.5s}
+.sl--membr2{height:16px;background:#3A3F49;transition-delay:.75s;box-shadow:0 -1px 0 #555}
+
+/* числа по три */
+.chisla--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.material-red{display:flex;flex-wrap:wrap;gap:8px}
+.material-red span{height:40px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px;background:rgb(255 255 255/.14)}
+.chislo .material-red span{background:var(--paper)}
+.chislo--navy .material-red span{background:rgb(255 255 255/.1)}
+.gr--toplina .gr-lenta{transform-box:fill-box;transform-origin:left;transform:scaleX(.001);transition:transform 1.2s .3s var(--izh)}
+.gr--toplina .gr-lenta2{transform-box:fill-box;transform-origin:left;transform:scaleX(.001);transition:transform 1.2s .7s var(--izh)}
+.vleze .gr--toplina .gr-lenta,.vleze .gr--toplina .gr-lenta2{transform:none}
+
+/* чертежите в „За нас“ */
+.cht-karti{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cht-karta{display:flex;flex-direction:column;gap:14px;padding:clamp(24px,2.8vw,38px);border-radius:var(--r-xl);min-height:520px}
+.cht-karta--svetla{background:#fff;color:var(--ink)}
+.sek--tamno .cht-karta--svetla h3{color:var(--ink)}
+.cht-karta--tamna{background:var(--navy-2);color:#fff}
+.cht-karta--tamna h3{color:#fff}
+.cht-karta p{opacity:.82;font-size:16px}
+.cht-karta__n{font:600 14px/1 var(--f-d);color:var(--sky)}
+.cht-karta__chertezh{flex:1;display:grid;place-items:center;min-height:220px;margin-bottom:12px;border-radius:20px;background-image:linear-gradient(var(--grid,rgb(36 52 92/.06)) 1px,transparent 1px),linear-gradient(90deg,var(--grid,rgb(36 52 92/.06)) 1px,transparent 1px);background-size:22px 22px}
+.cht-karta--tamna .cht-karta__chertezh{--grid:rgb(255 255 255/.06)}
+.cht{width:100%;max-width:360px;overflow:visible}
+.cht-stena{fill:none;stroke:currentColor;stroke-opacity:.25;stroke-width:1.5}
+.cht-l{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.vleze .cht-l{animation:chert 2.2s var(--izh) forwards}
+@keyframes chert{to{stroke-dashoffset:0}}
+.cht-l--voda{stroke:#4CACD8}.cht-l--topla{stroke:#E0785A;animation-delay:.25s!important}.cht-l--tok{stroke:#F2B84B;animation-delay:.5s!important}
+.cht-t{fill:#4CACD8}.cht-t2{fill:#E0785A}.cht-k{fill:#fff;stroke:currentColor;stroke-width:1.5}
+.cht-karta--svetla .cht-l--tok{stroke:#D69A2B}
+.cht-pod{fill:color-mix(in oklch,var(--navy) 30%,white)}
+.cht-karta--tamna .cht-pod{fill:rgb(255 255 255/.18)}
+.cht-zamazka{fill:#9BA6B8;transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1.6s .3s var(--izh)}
+.vleze .cht-zamazka{transform:none}
+.cht-niv-l{stroke:#4CACD8;stroke-width:2}
+.cht-nivelir{fill:#F2B84B}
+.cht-mehurche{fill:#fff;animation:mehur 3s ease-in-out infinite}
+@keyframes mehur{0%,100%{transform:translateX(-14px)}50%{transform:translateX(10px)}}
+.cht-gips{stroke:currentColor;stroke-opacity:.5;stroke-width:2}
+.cht-pl{fill:#fff;stroke:currentColor;stroke-opacity:.2;opacity:0;transform:translateY(-10px);transition:opacity .4s calc(var(--i)*.05s),transform .4s calc(var(--i)*.05s) var(--izh)}
+.cht-karta--svetla .cht-pl{fill:var(--sky-soft)}
+.vleze .cht-pl{opacity:1;transform:none}
+.cht-hidro{stroke:#4CACD8;stroke-width:6}
+.cht-vrata{fill:#C8A27A;fill-opacity:.85;transform-box:fill-box;transform-origin:left;transform:scaleX(0);transition:transform 1.4s .5s var(--izh)}
+.vleze .cht-vrata{transform:none}
+.cht-kota{stroke:#4CACD8;stroke-width:1.5}
+.cht-txt{font:700 11px var(--f-t);fill:currentColor;opacity:.7}
+
+/* ангажиментите */
+.angazh{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.angazh__k{display:flex;flex-direction:column;gap:14px;padding:clamp(24px,2.6vw,36px);border-radius:var(--r-xl);background:#fff;box-shadow:var(--sen)}
+.angazh__k p{color:var(--ink-2);font-size:16px}
+.angazh__ik{width:56px;height:56px;border-radius:18px;background:var(--sky);color:var(--navy);display:grid;place-items:center;margin-bottom:8px}
+.angazh__ik svg{width:26px;height:26px}
+
+/* обектите отвътре */
+.obekti-golemi{display:grid;gap:clamp(40px,6vw,96px)}
+.ob-golyam{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4vw,64px);align-items:center}
+.ob-golyam:nth-child(even) .ob-golyam__snimki{order:2}
+.ob-golyam__snimki{position:relative;aspect-ratio:5/4}
+.ob-golyam__k{position:absolute;border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sen-2);background:var(--line)}
+.ob-golyam__k img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--izh)}
+.ob-golyam__k--0{left:0;top:0;width:66%;height:100%;z-index:1}
+.ob-golyam__k--1{right:0;top:6%;width:40%;height:46%;z-index:2}
+.ob-golyam__k--2{right:6%;bottom:0;width:40%;height:46%;z-index:2}
+.ob-golyam:hover .ob-golyam__k img{transform:scale(1.04)}
+.ob-golyam__t{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.ob-golyam__t > .chip{margin-right:6px}
+.ob-golyam__t h2{margin-top:6px}
+.ob-golyam__t p:not(.vodach){color:var(--ink-2)}
+.ob-golyam__t .chip svg{margin-right:4px}
+.ob-fakti{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ob-fakti div{padding:18px;border-radius:var(--r-m);background:#fff;box-shadow:var(--sen);display:flex;flex-direction:column;gap:8px}
+.ob-fakti small{font:600 12px/1 var(--f-t);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.ob-fakti b{font:500 18px/1.2 var(--f-d);letter-spacing:-.02em}
+.obekti--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* блогът */
+.statiya-gl{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center;padding:12px;border-radius:var(--r-xl);background:#fff;box-shadow:var(--sen)}
+.statiya-gl__kadar{aspect-ratio:4/3;border-radius:calc(var(--r-xl) - 12px);overflow:hidden}
+.statiya-gl__kadar img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--izh)}
+.statiya-gl:hover .statiya-gl__kadar img{transform:scale(1.03)}
+.statiya-gl__t{display:flex;flex-direction:column;gap:18px;align-items:flex-start;padding:12px 24px 12px 0}
+.statiya-gl__t p{color:var(--ink-2)}
+.str-glava--statiya{padding-bottom:clamp(32px,4vw,56px);overflow:visible}
+.str-glava h1.statiya-h1,h1.statiya-h1{font-size:clamp(25px,4vw,56px);line-height:1.1;margin-top:22px}
+.statiya-kadar{aspect-ratio:16/9;margin-top:clamp(28px,4vw,48px);max-width:1100px;margin-inline:auto}
+.proza--statiya{font-size:18.5px}
+.proza--statiya h2,.proza--statiya h3{scroll-margin-top:120px}
+.spodeli{display:flex;align-items:center;gap:10px;margin-top:48px;padding-top:24px;border-top:1px solid var(--line-2);font-weight:700;font-size:14.5px}
+.spodeli a,.spodeli button{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line-2);font-weight:700}
+.spodeli a{width:44px;padding:0;justify-content:center}
+.spodeli svg{width:18px;height:18px}
+.spodeli button.kopirano{background:var(--sky);box-shadow:none}
+
+/* контактите */
+.kontakti{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:18px;align-items:start}
+.kontakti__lyavo{display:grid;gap:14px}
+.k-red{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.k-karta{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:var(--r-l);background:#fff;box-shadow:var(--sen);transition:transform .4s var(--izh);min-width:0;container-type:inline-size}
+a.k-karta:hover{transform:translateY(-3px)}
+.k-karta small{font:600 12px/1 var(--f-t);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.k-karta b{font:500 20px/1.2 var(--f-d);letter-spacing:-.02em}
+.k-karta .k-email{font-size:min(20px,calc(100cqi / 13.6));white-space:nowrap}
+.k-ik{width:44px;height:44px;border-radius:14px;background:var(--sky-soft);color:var(--navy);display:grid;place-items:center;margin-bottom:8px}
+.k-ik svg{width:22px;height:22px}
+.k-karta--tel{background:var(--navy);color:#fff;padding:28px}
+.k-karta--tel small{color:color-mix(in oklch,#fff 64%,var(--navy))}
+.k-karta--tel b{font-size:clamp(34px,4vw,54px);letter-spacing:-.045em;color:#fff}
+.k-karta--tel .vrazka{color:#fff;align-self:flex-start;margin-top:8px}
+.k-karta--karta{overflow:hidden}
+.karta-varna{width:100%;height:auto;margin:10px 0 4px}
+.kv-more{fill:var(--sky-soft)}
+.kv-ezero{fill:var(--sky-mid);opacity:.7}
+.kv-krag{fill:none;stroke:var(--sky);stroke-width:1.5;stroke-dasharray:4 6;transform-box:fill-box;transform-origin:center;animation:kvkrag 4s ease-in-out infinite;animation-delay:calc(var(--i)*.5s)}
+@keyframes kvkrag{0%,100%{opacity:.35}50%{opacity:1}}
+.kv-tochka{fill:var(--navy);stroke:#fff;stroke-width:3}
+.kv-txt{font:600 15px var(--f-d);fill:var(--navy)}
+.k-firma{font-size:13px;color:var(--ink-3)}
+.kontakti__forma{position:sticky;top:96px;scroll-margin-top:110px}
+.kontakti__forma h2{margin-bottom:22px;font-size:clamp(20px,1.8vw,26px);line-height:1.25}
+.zab-saglasie{font-size:13px;color:#A33F2A}
+
+@media (max-width:1100px){
+  .vaprosi{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:980px){
+  .st-golyama,.tsitat-blok,.dve-resheniya,.ob-golyam,.statiya-gl,.kontakti,.cht-karti,.angazh,.dva-promo,.mini-uslugi,.obekti--2,.chisla--3{grid-template-columns:minmax(0,1fr)}
+  .st-golyama:nth-child(even) .st-golyama__v,.ob-golyam:nth-child(even) .ob-golyam__snimki{order:-1}
+  .st-golyama__v{order:-1;min-height:280px}
+  .kontakti__forma{position:static}
+  .st-nav{grid-template-columns:minmax(0,1fr)}
+  .cht-karta{min-height:0}
+  .statiya-gl__t{padding:4px 12px 16px}
+}
+@media (max-width:640px){
+  .str-glava h1.statiya-h1,h1.statiya-h1{font-size:clamp(19px,5.8vw,30px)}
+  .proza h2{font-size:clamp(18px,5.2vw,24px)}
+  .proza h3{font-size:clamp(16px,4.6vw,20px)}
+  .vaprosi{grid-template-columns:minmax(0,1fr)}
+  .k-red{grid-template-columns:minmax(0,1fr)}
+  .list-oferta__red{grid-template-columns:28px minmax(0,1fr) 40px;font-size:14px}
+  .list-oferta__red .c{display:none}
+}
